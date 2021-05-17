@@ -1,0 +1,41 @@
+{
+    "version": "16.04",
+    "description": "A multi-format file archiver with high compression ratios",
+    "homepage": "https://www.7-zip.org/",
+    "license": {
+        "identifier": "Freeware,LGPL-2.0-only,BSD-3-Clause",
+        "url": "https://www.7-zip.org/license.txt"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://7-zip.org/a/7z1604-x64.msi",
+            "hash": "b3885b2f090f1e9b5cf2b9f802b07fe88e472d70d60732db9f830209ac296067"
+        },
+        "32bit": {
+            "url": "https://7-zip.org/a/7z1604.msi",
+            "hash": "b3885b2f090f1e9b5cf2b9f802b07fe88e472d70d60732db9f830209ac296067"
+        }
+    },
+    "extract_dir": "Files\\7-Zip",
+    "bin": "7z.exe",
+    "shortcuts": [
+        [
+            "7zFM.exe",
+            "7-Zip"
+        ]
+    ],
+    "checkver": {
+        "url": "https://www.7-zip.org/download.html",
+        "regex": "Download 7-Zip ([\\d.]+)"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://7-zip.org/a/7z$cleanVersion-x64.msi"
+            },
+            "32bit": {
+                "url": "https://7-zip.org/a/7z$cleanVersion.msi"
+            }
+        }
+    }
+}
